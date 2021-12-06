@@ -1,6 +1,6 @@
 <?php include("navbar.php"); ?>
 
-<script type="text/javascript" src="../jsScripts/loginregister.js"></script>
+<script type="text/javascript" src="js/loginscript.js"></script>
 
 <div class="loginbox">
 
