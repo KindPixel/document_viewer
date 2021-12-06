@@ -13,3 +13,11 @@
 .registerbox input {
     margin-top:5px;
 }
+
+.logo {
+    margin-right:20px;
+}
+
+nav span, a {
+    margin-left:20px;
+}

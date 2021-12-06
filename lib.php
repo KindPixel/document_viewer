@@ -7,6 +7,8 @@
 <!-- Jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
 <?php 
     if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
         // session isn't started

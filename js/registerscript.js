@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $('#butsave').on('click', function() {
         var login = $('#login').val();
         var namecomp = $('#name-company').val();
@@ -46,6 +47,7 @@ $(document).ready(function () {
             $('#error').html('the two password are not identical or the mail is not valid');
         }
     });
+    
 });
 
 
