@@ -5,3 +5,11 @@
 .loginbox input {
     margin-top:3px;
 }
+
+.registerbox {
+    margin: 10%;
+}
+
+.registerbox input {
+    margin-top:5px;
+}
