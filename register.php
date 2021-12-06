@@ -1,8 +1,8 @@
-<?php include("navbar.php") ?>
+<?php include("lib.php"); ?>
 
 <script type="text/javascript" src="js/registerscript.js"></script>
 
-<div class="alert alert-success alert-dismissible" id="success" style="display:none;">
+    <div class="alert alert-success alert-dismissible" id="success" style="display:none;">
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
 	</div>
 	<div class="alert alert-danger alert-dismissible" id="error" style="display:none;">
@@ -38,9 +38,8 @@
 			<input class="form-control" id="access-level" placeholder="Access level" name="Access level">
 		</div>
 
-		<input style="margin-top:10px;" type="button" name="save" class="btn btn-primary" value="Submit" id="butsave">
+		<input type="button" class="btn btn-primary" value="Submit" id="butsave">
 
 	</form>
 
 </div>
-
