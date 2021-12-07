@@ -1,27 +1,47 @@
 .loginbox {
-    margin: 10%;
+  margin: 10%;
 }
 
 .loginbox input {
-    margin-top:3px;
+  margin-top: 3px;
 }
 
 .registerbox {
-    margin: 10%;
+  margin: 10%;
 }
 
 .registerbox input {
-    margin-top:5px;
+  margin-top: 5px;
 }
 
 .logo {
-    margin-right:20px;
+  margin-right: 20px;
 }
 
-nav span, a {
-    margin-left:20px;
+nav span,
+a {
+  margin-left: 20px;
+  text-decoration: none;
 }
 
-table {
-
+#myTable {
+  margin: 20px;
 }
+
+#myTable td {
+  padding: 8px;
+}
+.btnSelect {
+  background-color: #f44336;
+  border: 2px solid #f44336;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+.btnSelect:hover {
+  background-color: #c93326;
+  border: 2px solid #c93326;
+}
+
+
+

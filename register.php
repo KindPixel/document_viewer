@@ -1,4 +1,12 @@
-<?php include("lib.php"); ?>
+<?php 
+include("lib.php");
+
+if($_SESSION["access"] != "999") {
+	header("Location: login.php");
+	die();
+}
+
+?>
 
 <script type="text/javascript" src="js/registerscript.js"></script>
 
@@ -39,6 +47,7 @@
 		</div>
 
 		<input type="button" class="btn btn-primary" value="Submit" id="butsave">
+		<a href="login.php">Go back..</a>
 
 	</form>
 

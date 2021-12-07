@@ -1,18 +1,13 @@
 <?php
 include("lib.php");
 
-if($_SESSION["access"] == "") {
+if($_SESSION["access"] != "999") {
     header("Location: login.php");
     die();
 }
-
 ?>
 
-<script type="text/javascript" src="js/logout.js"></script>
-
-<script type="text/javascript" src="js/datadisplay.js"></script>
-
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
     <a href="home.php" class="logo">
         <img src="favicon.ico" alt="Sunitech" />
@@ -42,14 +37,3 @@ if($_SESSION["access"] == "") {
         </ul>
     </div>
 </nav>
-
-
-
-<table border='1' id="myTable">
-    <tr>
-        <th>Id</th>
-        <th>nom de la page</th>
-        <th>Action</th>
-    </tr>
-</table>
-
