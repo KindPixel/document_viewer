@@ -1,8 +1,11 @@
 <?php
 include("lib.php");
 
-if ($_SESSION["access"] != "999") {
+if ($_SESSION["access"] == "") {
     header("Location: login.php");
+}
+else if ($_SESSION["access"] != "999") {
+    header("Location: home.php");
     die();
 }
 ?>

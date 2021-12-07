@@ -2,7 +2,7 @@
 include("lib.php");
 
 if($_SESSION["access"] != "999") {
-	header("Location: login.php");
+	header("Location: home.php");
 	die();
 }
 
