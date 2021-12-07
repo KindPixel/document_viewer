@@ -5,6 +5,7 @@ $(document).ready(function () {
         url: "php/listingusers.php",
         success: function (dataResult) {
             console.log(dataResult);
+            
             dataResult = Object.values(dataResult);
             dataResult = JSON.parse(dataResult);
             
@@ -18,8 +19,8 @@ $(document).ready(function () {
             
             
             
-            // $(".example").html(response);
             
+            // $(".example").html(dataResult);
             // console.log(typeof(response));
             // var responsejson = JSON.parse(response);
             // console.log(typeof(responsejson));

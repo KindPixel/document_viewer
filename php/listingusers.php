@@ -4,7 +4,7 @@ session_start();
 $request = $pdo ->prepare("SELECT login, namecomp, mail, access FROM users");
 
 $request->execute();
-$result = $request->fetchAll(PDO::FETCH_ASSOC);
+$result = $request->fetchAll();
 $result = json_encode($result);
 
 echo $result;
