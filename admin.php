@@ -1,7 +1,7 @@
 <?php
 include("lib.php");
 
-if($_SESSION["access"] != "999") {
+if ($_SESSION["access"] != "999") {
     header("Location: login.php");
     die();
 }
@@ -25,10 +25,10 @@ if($_SESSION["access"] != "999") {
             <li class="nav-item">
                 <span class="nav-link">Compagnie: <?php echo ($_SESSION['namecomp']); ?></span>
             </li>
-            <?php 
+            <?php
             if ($_SESSION['access'] == "999") {
-            echo '<li class="nav-item"><a href="register.php"><span class="nav-link">Crée un nouvel utilisateur</span></a></li>';
-            echo '<li class="nav-item"><a href="admin.php"><span class="nav-link">Acceder au menue ADMIN</span></a></li>';
+                echo '<li class="nav-item"><a href="register.php"><span class="nav-link">Crée un nouvel utilisateur</span></a></li>';
+                echo '<li class="nav-item"><a href="admin.php"><span class="nav-link">Acceder au menue ADMIN</span></a></li>';
             }
             ?>
             <li class="nav-item">
@@ -36,4 +36,9 @@ if($_SESSION["access"] != "999") {
             </li>
         </ul>
     </div>
+
 </nav>
+
+<script type="text/javascript" src="js/listingusers.js"></script>
+
+<div class="example"></div>

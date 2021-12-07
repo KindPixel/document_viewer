@@ -12,6 +12,8 @@
 
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 
+<script type="text/javascript" src="js/logout.js"></script>
+
 <?php
     if(!isset($_SESSION)) {   
         session_start();

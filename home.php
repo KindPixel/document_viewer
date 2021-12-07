@@ -5,12 +5,9 @@ if($_SESSION["access"] == "") {
     header("Location: login.php");
     die();
 }
-
 ?>
 
-<script type="text/javascript" src="js/logout.js"></script>
-
-<script type="text/javascript" src="js/datadisplay.js"></script>
+<script type="text/javascript" src="js/listingfiles.js"></script>
 
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
 
