@@ -11,12 +11,13 @@ $output = "";
 
 foreach ($result as $row) {
     $output .='
-    <tr>
+    <tr class=' . $row["login"] . '>
     <td>' . $row["login"] . '</td>
     <td>' . $row["namecomp"] . '</td>
     <td>' . $row["mail"] . '</td>
     <td>' . $row["access"] . '</td>
     <td><button type="button" id="' . $row["login"] . '" class="btnSelect btn btn-danger btn-xs">Select</button></td>
+    <td><button type="button" id="' . $row["login"] . '" class="btnDel btn btn-danger btn-xs">Supprimer</button></td>
     </tr>
     ';
 }

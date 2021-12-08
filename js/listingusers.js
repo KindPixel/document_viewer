@@ -16,4 +16,22 @@ $(document).ready(function () {
         
         window.location.href = url;
     });
+
+    $("#tableUsers").on('click', '.btnDel', function() {
+        var currentId = $(this).attr('id');
+        console.log(currentId);
+
+        $.ajax({
+            type: "POST",
+            url: "php/deluser.php",
+            data: {login : currentId},
+            dataType: "text",
+            success: function () {
+                currentId = "."+currentId;
+                $(currentId).hide();
+            }
+        });
+    });
+
+
 });

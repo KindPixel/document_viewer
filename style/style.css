@@ -44,5 +44,17 @@ a {
   border: 2px solid #c93326;
 }
 
+.navbar .container-fluid>.navbar-header {
+  float: left;
+  margin-right: 10px;
+}
+.navbar .navbar-nav {
+  float: left;
+  margin: 5px;
+}
+.nav>li {
+  float: left;
+}
+
 
 
