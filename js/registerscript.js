@@ -30,7 +30,7 @@ $(document).ready(function () {
                         }
                         else if(statusCode==201) {
                             $("#error").show();
-                            $('#error').html('This email is already registered :/');
+                            $('#error').html('This login name is already registered :/');
                         }
                         else {
                             alert("error");

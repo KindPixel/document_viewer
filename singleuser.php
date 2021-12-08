@@ -42,13 +42,10 @@ else if ($_SESSION["access"] != "999") {
 
 </nav>
 
-<script type="text/javascript" src="js/listingusers.js"></script>
+<script type="text/javascript" src="js/singleuser.js"></script>
 
-<table border='1' id="tableUsers">
-    <tr>
-        <th>Login</th>
-        <th>Nom de l'entreprise</th>
-        <th>Email</th>
-        <th>Niveau d'access</th>
-    </tr>
-</table>
+<body>
+    <div id="singleuser"></div>
+
+    <div id="accessdoc"></div>
+</body>

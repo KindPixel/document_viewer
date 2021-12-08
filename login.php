@@ -1,4 +1,8 @@
-<?php include("lib.php"); ?>
+<?php include("lib.php");
+if ($_SESSION['access'] != "") {
+    header("Location: home.php");
+}
+?>
 
 <script type="text/javascript" src="./js/loginscript.js"></script>
 

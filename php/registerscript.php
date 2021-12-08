@@ -11,8 +11,8 @@
 
     $hash = password_hash($password, PASSWORD_DEFAULT);
     
-    $request = $pdo->prepare("select * from users where mail=:login");
-    $request->bindParam(":login", $email, PDO::PARAM_STR, 100);
+    $request = $pdo->prepare("select * from users where login=:login");
+    $request->bindParam(":login", $login, PDO::PARAM_STR, 100);
     $request->execute();
     $rownumber = count($request->fetchAll());
 
