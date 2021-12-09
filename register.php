@@ -6,6 +6,7 @@ if($_SESSION["access"] != "999") {
 	die();
 }
 
+include("navbar.php");
 ?>
 
 <script type="text/javascript" src="js/registerscript.js"></script>

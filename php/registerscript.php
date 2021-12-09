@@ -8,6 +8,7 @@
     $email=$_POST['email'];
     $password=$_POST['password'];
     $acess=$_POST['access'];
+    $null = "null";
 
     $hash = password_hash($password, PASSWORD_DEFAULT);
     
@@ -23,14 +24,16 @@
         $request=null;
     }
     else{
-        $request = $pdo->prepare("INSERT INTO `users`( `login`, `namecomp`, `mail`, `password`, `access`) 
-        VALUES (:login,:namecomp,:mail,:password,:access)");
+        $request = $pdo->prepare("INSERT INTO `users`( `login`, `namecomp`, `mail`, `password`, `access`, `filesAccess`) 
+        VALUES (:login,:namecomp,:mail,:password,:access, :null)");
 
         $request->bindParam(":login",$login, PDO::PARAM_STR, 100);
         $request->bindParam(":namecomp", $namecomp, PDO::PARAM_STR, 100);
         $request->bindParam(":mail", $email, PDO::PARAM_STR, 100);
         $request->bindParam(":password", $hash, PDO::PARAM_STR, 100);
         $request->bindParam(":access", $acess, PDO::PARAM_STR, 100);
+        $request->bindParam(":null", $null, PDO::PARAM_STR, 100);
+
 
         if ($request->execute()) {
             echo 200;
@@ -41,4 +44,5 @@
             $request=null;
         }
     }
+    
 ?>

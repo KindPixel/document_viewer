@@ -16,13 +16,16 @@ $(document).ready(function () {
                 type: "POST",
                 url: "php/checkUserAccess.php",
                 data: { login: login },
-                success: function (response) {
+                success: function (data) {
 
+                
+                    response = data;
 
                     response = response.substring(32);
                     response = response.slice(0, -3);
                     response = response.replaceAll(/\\/g, '');
-                    if (response == "") {
+                    
+                    if (response == "" || response == "null") {
                         $.each(dataResult, function (indexInArray, valueOfElement) {
                             markup = '<div class="form-group form-check"><label class="form-check-label"><input id="' + valueOfElement + '" class="form-check-input checkAccess" type="checkbox" name="remember"> ' + valueOfElement + '</label></div>';
                             tableBody = $("#acessdoc");
