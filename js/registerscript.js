@@ -1,15 +1,21 @@
 $(document).ready(function () {
-
-    $('#butsave').on('click', function() {
-        var login = $('#login').val();
-        var namecomp = $('#name-company').val();
-        var email = $('#email').val();
-        var password = $('#password').val();
-        var password_conf = $('#password-confirmation').val();
-        var access = $('#access-level').val();
+    $("#butsave").on("click", function () {
+        var login = $("#login").val();
+        var namecomp = $("#name-company").val();
+        var email = $("#email").val();
+        var password = $("#password").val();
+        var password_conf = $("#password-confirmation").val();
+        var access = $("#access-level").val();
 
         if (password == password_conf && validateEmail(email)) {
-            if(login!="" && namecomp!="" && email!="" && password!="" && password_conf!="" && access!=""){
+            if (
+                login != "" &&
+                namecomp != "" &&
+                email != "" &&
+                password != "" &&
+                password_conf != "" &&
+                access != ""
+            ) {
                 $.ajax({
                     url: "php/registerscript.php",
                     type: "POST",
@@ -19,41 +25,45 @@ $(document).ready(function () {
                         email: email,
                         password: password,
                         password_conf: password_conf,
-                        access: access						
+                        access: access,
                     },
                     cache: false,
-                    success: function(dataResult){
+                    success: function (dataResult) {
                         statusCode = dataResult.substr(dataResult.length - 3);
-                        if(statusCode==200) {
+                        if (statusCode == 200) {
                             $("#success").show();
-                            $('#success').html('Registration successful !'); 						
-                        }
-                        else if(statusCode==201) {
+                            $("#success").html("Registration successful !");
+                            setTimeout(fade_out, 3000);
+                            function fade_out() {
+                                $("#success").hide().empty();
+                            }
+                        } else if (statusCode == 201) {
                             $("#error").show();
-                            $('#error').html('This login name is already registered :/');
-                        }
-                        else {
+                            $("#error").html("This login name or the email is already registered :/");
+                            setTimeout(fade_out, 3000);
+                            function fade_out() {
+                                $("#error").hide().empty();
+                            }
+                        } else {
                             alert("error");
                         }
-                    }
+                    },
                 });
+            } else {
+                alert("Please fill all the field !");
             }
-            else {
-                alert('Please fill all the field !');
-            }
-        }
-        else {
+        } else {
             $("#error").show();
-            $('#error').html('the two password are not identical or the mail is not valid');
+            $("#error").html("the two password are not identical");
+            setTimeout(fade_out, 3000);
+            function fade_out() {
+                $("#error").hide().empty();
+            }
         }
     });
-    
 });
 
-
-function validateEmail(email) 
-{
+function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
-

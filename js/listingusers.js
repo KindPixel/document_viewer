@@ -2,9 +2,9 @@ $(document).ready(function () {
     $.ajax({
         type: "GET",
         url: "php/listingusers.php",
+        dataType: "text",
         success: function (data) {
-            tableBody = $("#tableUsers");
-            tableBody.append(data);
+            $("#tableUsers").append(data);
         },
     });
 

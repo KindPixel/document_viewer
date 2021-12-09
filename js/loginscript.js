@@ -17,12 +17,15 @@ $(document).ready(function () {
                 success: function(dataResult) {
                     statusCode = dataResult.substr(dataResult.length - 3);
                     if(statusCode==200){
-                        console.log("sucess");  
                         document.location.href = "home.php";
                     }
                     if(statusCode==201){
                         $("#error").show();
                         $('#error').html('Invalid Email or Password !');
+                        setTimeout(fade_out, 3000);
+                            function fade_out() {
+                                $("#error").hide().empty();
+                            }
                     }					
                 }
             });

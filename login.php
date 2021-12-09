@@ -19,6 +19,14 @@ if ($_SESSION['access'] != "") {
 			<input type="password" class="form-control" id="password" placeholder="Password" name="password">
 		</div>
 		<input type="button" name="save" class="btn btn-primary" value="Login" id="butlogin">
+
 	</form>
+
+	<div class="alert alert-success alert-dismissible" id="success" style="display:none;">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+	</div>
+	<div class="alert alert-danger alert-dismissible" id="error" style="display:none;">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+	</div>
 
 </div>

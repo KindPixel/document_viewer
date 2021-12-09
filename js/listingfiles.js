@@ -1,25 +1,44 @@
 $(document).ready(function () {
 
     $.ajax({
-        url: "php/listingfiles.php",
         type: "GET",
-        cache: false,
-        success: function (dataResult) {
-            dataResult = JSON.parse(dataResult);
-            dataResult = Object.values(dataResult);
+        url: "php/listingusersfiles.php",
+        success: function (response) {
+            response = response.substring(32);
+            response = response.slice(0, -3);
+            response = response.replaceAll(/\\/g, '');
 
-            $.each(dataResult, function (indexInArray, valueOfElement) {
-                href = "../document_viewer/pages/" + this;
+            if (response == "") {
+                $.each(response, function (indexInArray, valueOfElement) {
+                    href = "../document_viewer/pages/" + this;
+    
+                    var btn = "<button class='btnSelect'>Select</button>";
+    
+                    var index = indexInArray+1;
+    
+                    markup = "<tr style='cursor: pointer;'><td>" + index + "</td><td>" + valueOfElement + "</td><td>" + btn + "</td></tr>";
+    
+                    tableBody = $("#myTable");
+                    tableBody.append(markup);
+                });
+            }
+            else {
+                response = JSON.parse(response);
+                $.each(response, function (indexInArray, valueOfElement) {
+                    href = "../document_viewer/pages/" + this;
+    
+                    var btn = "<button class='btnSelect'>Select</button>";
+    
+                    var index = indexInArray+1;
+    
+                    markup = "<tr style='cursor: pointer;'><td>" + index + "</td><td>" + valueOfElement + "</td><td>" + btn + "</td></tr>";
+    
+                    tableBody = $("#myTable");
+                    tableBody.append(markup);
+                });
+            }
 
-                var btn = "<button class='btnSelect'>Select</button>";
-
-                var index = indexInArray+1;
-
-                markup = "<tr style='cursor: pointer;'><td>" + index + "</td><td>" + valueOfElement + "</td><td>" + btn + "</td></tr>";
-
-                tableBody = $("#myTable");
-                tableBody.append(markup);
-            });
+            
         },
     });
 
