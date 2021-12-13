@@ -1,14 +1,9 @@
 $(document).ready(function () {
 
-
-    
     $('#butlogin').on('click', function() {
-        
-        function login() {
             var login = $('#login').val();
             var password = $('#password').val();
 
-            if(login!="" && password!="" ){
                 $.ajax({
                     url: "php/loginscript.php",
                     type: "POST",
@@ -25,19 +20,9 @@ $(document).ready(function () {
                         if(statusCode==201){
                             $("#error").show();
                             $('#error').html('Invalid Email or Password !');
-                            setTimeout(fade_out, 3000);
-                                function fade_out() {
-                                    $("#error").hide().empty();
-                                }
                         }					
                     }
                 });
-            }
-            else{
-                alert('Please fill all the field !');
-            }
-        }
-        
     });
 
 });

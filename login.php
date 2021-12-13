@@ -8,18 +8,18 @@ if ($_SESSION['access'] != "") {
 
 <div class="loginbox">
 
-	<form id="login_form" method="post">
+	<form id="login_form">
 		<p class="logop"><img class="logoimg" src="img/logo.png" alt="Sunitech"></p>
 		<p class="titlelog">Se connecter</p>
 		<div class="form-group">
 			<label for="pwd">Nom d'utilisateur</label>
-			<input class="form-control" id="login" placeholder="" name="login">
+			<input class="form-control" id="login" name="login">
 		</div>
 		<div class="form-group">
 			<label for="pwd">Mot de passe</label>
-			<input type="password" class="form-control" id="password" placeholder="" name="password">
+			<input type="password" class="form-control" id="password" name="password">
 		</div>
-		<input type="submit" name="save" class="btn btn-primary" value="Se connecter" id="butlogin">
+		<input name="save" class="btn btn-primary" value="Se connecter" id="butlogin">
 	</form>
 
 	<div class="alert alert-success alert-dismissible" id="success" style="display:none;">

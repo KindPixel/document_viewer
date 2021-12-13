@@ -34,7 +34,6 @@
         $request->bindParam(":access", $acess, PDO::PARAM_STR, 100);
         $request->bindParam(":null", $null, PDO::PARAM_STR, 100);
 
-
         if ($request->execute()) {
             echo 200;
             $request=null;

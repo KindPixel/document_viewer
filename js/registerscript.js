@@ -8,14 +8,6 @@ $(document).ready(function () {
         var access = $("#access-level").val();
 
         if (password == password_conf && validateEmail(email)) {
-            if (
-                login != "" &&
-                namecomp != "" &&
-                email != "" &&
-                password != "" &&
-                password_conf != "" &&
-                access != ""
-            ) {
                 $.ajax({
                     url: "php/registerscript.php",
                     type: "POST",
@@ -33,14 +25,14 @@ $(document).ready(function () {
                         if (statusCode == 200) {
                             $("#success").show();
                             $("#success").html("Registration successful !");
-                            setTimeout(fade_out, 3000);
+                            setTimeout(fade_out, 5000);
                             function fade_out() {
                                 $("#success").hide().empty();
                             }
                         } else if (statusCode == 201) {
                             $("#error").show();
                             $("#error").html("This login name or the email is already registered :/");
-                            setTimeout(fade_out, 3000);
+                            setTimeout(fade_out, 5000);
                             function fade_out() {
                                 $("#error").hide().empty();
                             }
@@ -49,13 +41,10 @@ $(document).ready(function () {
                         }
                     },
                 });
-            } else {
-                alert("Please fill all the field !");
-            }
         } else {
             $("#error").show();
             $("#error").html("the two password are not identical");
-            setTimeout(fade_out, 3000);
+            setTimeout(fade_out, 5000);
             function fade_out() {
                 $("#error").hide().empty();
             }

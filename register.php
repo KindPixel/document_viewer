@@ -26,32 +26,32 @@ include("navbar.php");
 
     <div class="form-group">
 			<label for="email">Nom de la compagnie</label>
-			<input type="text" class="form-control" id="name-company" placeholder="" name="Name of the company">
+			<input type="text" class="form-control" id="name-company" placeholder="" name="Name of the company" required>
 		</div>
 
 		<div class="form-group">
 			<label for="email">Nom d'utilisateur</label>
-			<input type="text" class="form-control" id="login" placeholder="" name="Login">
+			<input type="text" class="form-control" id="login" placeholder="" name="Login" required>
 		</div>
 
 		<div class="form-group">
 			<label for="pwd">Adresse email</label>
-			<input type="email" class="form-control" id="email" placeholder="" name="email">
+			<input type="email" class="form-control" id="email" placeholder="" name="email" required>
 		</div>
 		<div class="form-group">
 			<label for="pwd">Créer un mot de passe</label>
-			<input type="password" class="form-control" id="password" placeholder="" name="password">
+			<input type="password" class="form-control" id="password" placeholder="" name="password" required>
 		</div>
         <div class="form-group">
 			<label for="pwd">Confirmer le mot de passe</label>
-			<input type="password" class="form-control" id="password-confirmation" placeholder="" name="password confirmation">
+			<input type="password" class="form-control" id="password-confirmation" placeholder="" name="password confirmation" required>
 		</div>
         <div class="form-group">
 			<label for="pwd">Statut</label>
-			<input class="form-control" id="access-level" placeholder="" name="Access level">
+			<input class="form-control" id="access-level" placeholder="" name="Access level" required>
 		</div>
 
-		<input type="button" class="btn btn-primary" value="Créer" id="butsave">
+		<input type="submit" class="btn btn-primary" value="Créer" id="butsave">
 		<!--<a href="login.php">Go back..</a>-->
 
 	</form>
