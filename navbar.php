@@ -10,9 +10,9 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="home.php" id="">Accueil</a>
-          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="home.php" id="">Accueil</a>
+            </li>
             <!--li class="nav-item">
                 <a class="nav-link"><?php echo ($_SESSION['mail']); ?></a>
             </li-->
@@ -31,3 +31,4 @@
         </ul>
     </div>
 </nav>
+
