@@ -51,7 +51,7 @@ include("navbar.php");
 			<input class="form-control" id="access-level" placeholder="" name="Access level" required>
 		</div>
 
-		<input type="submit" class="btn btn-primary" value="Créer" id="butsave">
+		<input type="button" class="btn btn-primary" value="Créer" id="butsave">
 		<!--<a href="login.php">Go back..</a>-->
 
 	</form>

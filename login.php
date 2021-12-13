@@ -19,7 +19,7 @@ if ($_SESSION['access'] != "") {
 			<label for="pwd">Mot de passe</label>
 			<input type="password" class="form-control" id="password" name="password">
 		</div>
-		<input name="save" class="btn btn-primary" value="Se connecter" id="butlogin">
+		<input type="button" name="save" class="btn btn-primary" value="Se connecter" id="butlogin">
 	</form>
 
 	<div class="alert alert-success alert-dismissible" id="success" style="display:none;">

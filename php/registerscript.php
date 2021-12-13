@@ -12,17 +12,32 @@
 
     $hash = password_hash($password, PASSWORD_DEFAULT);
     
-    $request = $pdo->prepare("select * from users where login=:login OR mail=:mail");
-    $request->bindParam(":login", $login, PDO::PARAM_STR, 100);
-    $request->bindParam(":mail", $email, PDO::PARAM_STR, 100);
-    $request->execute();
-    $rownumber = count($request->fetchAll());
+    $requestl = $pdo->prepare("select * from users where login=:login");
+    $requestl->bindParam(":login", $login, PDO::PARAM_STR, 100);
+    $requestl->execute();
+    $rownumberl = count($requestl->fetchAll());
 
-    if ($rownumber != 0)
+    if ($rownumberl != 0)
     {
         echo 201;
-        $request=null;
+        $requestl=null;
+        die();
     }
+
+    $requestm = $pdo->prepare("select * from users where mail=:mail");
+    $requestm->bindParam(":mail", $email, PDO::PARAM_STR, 100);
+    $requestm->execute();
+    $rownumberm = count($requestm->fetchAll());
+
+    if ($rownumberm != 0)
+    {
+        echo 202;
+        $requestm=null;
+        die();
+    }
+
+
+
     else{
         $request = $pdo->prepare("INSERT INTO `users`( `login`, `namecomp`, `mail`, `password`, `access`, `filesAccess`) 
         VALUES (:login,:namecomp,:mail,:password,:access, :null)");
@@ -39,7 +54,7 @@
             $request=null;
         } 
         else {
-            echo 202;
+            echo 203;
             $request=null;
         }
     }

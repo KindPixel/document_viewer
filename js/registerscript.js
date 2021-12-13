@@ -29,15 +29,28 @@ $(document).ready(function () {
                             function fade_out() {
                                 $("#success").hide().empty();
                             }
+                            $(input).empty();
                         } else if (statusCode == 201) {
                             $("#error").show();
-                            $("#error").html("This login name or the email is already registered :/");
+                            $("#error").html("This login name is already registered :/");
                             setTimeout(fade_out, 5000);
                             function fade_out() {
                                 $("#error").hide().empty();
                             }
-                        } else {
-                            alert("error");
+                        } else if (statusCode == 202) {
+                            $("#error").show();
+                            $("#error").html("This  email is already registered :/");
+                            setTimeout(fade_out, 5000);
+                            function fade_out() {
+                                $("#error").hide().empty();
+                            }
+                        } else if (statusCode == 203) {
+                            $("#error").show();
+                            $("#error").html("A netwo");
+                            setTimeout(fade_out, 5000);
+                            function fade_out() {
+                                $("#error").hide().empty();
+                            }
                         }
                     },
                 });
