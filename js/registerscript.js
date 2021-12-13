@@ -75,6 +75,7 @@ $(document).ready(function () {
                     $("#error").hide().empty();
                 }
         }
+
     });
 
     $("#password").on("keyup", ValidatePassword);
