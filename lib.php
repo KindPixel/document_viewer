@@ -14,8 +14,7 @@
 
 <script type="text/javascript" src="js/logout.js"></script>
 
-<?php session_start();
-print_r($_SESSION)?>
-
-
-       
+<?php
+session_start();
+//print_r($_SESSION)
+?>

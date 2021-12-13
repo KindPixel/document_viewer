@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('#logout').on('click', function(e){
-        if(confirm("Are you sure you want to leave ?")) {
+        if(confirm("Êtes vous sur de vouloir vous déconnecter ?")) {
             $.ajax({
                 url: "php/logout.php",
                 success: function (response) {

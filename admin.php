@@ -14,12 +14,18 @@ else if ($_SESSION["access"] != "999") {
 
 <script type="text/javascript" src="js/listingusers.js"></script>
 
+<div class="maxwidth">
+
+  <h5>Liste des utilisateurs</h5>
+
 <table border='1' id="tableUsers">
     <tr>
-        <th>Login</th>
-        <th>Nom de l'entreprise</th>
+        <th>Utilisateur</th>
+        <th>Nom</th>
         <th>Email</th>
-        <th>Niveau d'access</th>
+        <th>Statut</th>
         <th>Actions</th>
     </tr>
 </table>
+
+</div>

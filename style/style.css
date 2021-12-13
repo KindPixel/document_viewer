@@ -1,9 +1,60 @@
+body {
+    background: #ebeff2;
+}
+
 .loginbox {
   margin: 10%;
 }
 
 .loginbox input {
-  margin-top: 3px;
+  font-size: 13px;
+  border:1px solid #DDD;
+  box-shadow:none;
+  border-radius: 3px;
+}
+.loginbox input:hover {
+    border:1px solid cornflowerblue;
+}
+.loginbox input:focus {
+    border:1px solid cornflowerblue;
+    box-shadow:none;
+}
+.loginbox input:active {
+    border:1px solid cornflowerblue;
+    box-shadow:none;
+}
+
+
+#register_form input {
+  font-size: 13px;
+  border:1px solid #DDD;
+  box-shadow:none;
+  border-radius: 3px;
+}
+#register_form input:hover {
+    border:1px solid #fa7418;
+}
+#register_form input:focus {
+    border:1px solid #fa7418;
+    box-shadow:none;
+}
+#register_form input:active {
+    border:1px solid #fa7418;
+    box-shadow:none;
+}
+
+
+
+
+#butlogin, #butsave{
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 3px;
+  border: 0 !important;
+  font-size: 14px;
+  font-weight: 500;
+  background: #fa7418;
+  box-shadow:none
 }
 
 .registerbox {
@@ -11,7 +62,7 @@
 }
 
 .registerbox input {
-  margin-top: 5px;
+  margin-top: 0px;
 }
 
 .logo {
@@ -30,18 +81,31 @@ a {
 }
 
 #myTable td {
-  padding: 8px;
+  padding:3px 0px;
 }
 .btnSelect {
-  background-color: #f44336;
-  border: 2px solid #f44336;
-  border-radius: 4px;
+  background-color: #fa7418;
+  border: 0px;
+  border-radius: 3px;
   color: white;
-  cursor: pointer;
+  font-size: 13px;
+  padding: 3px 5px;
 }
 .btnSelect:hover {
-  background-color: #c93326;
-  border: 2px solid #c93326;
+  border: 0px;
+}
+
+.btnDel {
+  background-color: crimson;
+  border: 0px;
+  border-radius: 3px;
+  color: white;
+  font-size: 13px;
+  padding: 3px 5px;
+  width: 100%;
+}
+.btnDel:hover {
+  border: 0px;
 }
 
 .navbar .container-fluid>.navbar-header {
@@ -49,11 +113,27 @@ a {
   margin-right: 10px;
 }
 .navbar .navbar-nav {
-  float: left;
+  width: 100%;
   margin: 5px;
+  font-size: 14px;
 }
 .nav>li {
   float: left;
+}
+
+.logop{
+  text-align: left;
+}
+
+.logoimg{
+  width: 75px;
+}
+
+.titlelog{
+  color:#222;
+  font-weight:500;
+  font-size: 18px;
+text-align: left;
 }
 
 #acessdoc {
@@ -64,5 +144,94 @@ a {
   margin:15px;
 }
 
+#login_form{
+  max-width: 300px;
+  margin: 0 auto;
+  border: 1px solid #DDD;
+  padding: 25px;
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#login_form label {
+    font-size: 13px;
+    color: #555;
+}
+
+.form-group{
+  margin-top:5px;
+}
+
+#register_form{
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #DDD;
+  padding: 25px;
+  border-radius: 8px;
+  background: #FFF;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#register_form label {
+    font-size: 13px;
+    color: #555;
+}
+
+.form-group{
+  margin-top:5px;
+}
+
+.maxwidth{
+  margin: 0 auto;
+  margin-top: 35px;
+  width: 100%;
+  max-width: 700px;
+}
+.maxwidthform{
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 400px;
+}
+
+#myTable, #tableUsers{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 700px;
+  background: #FFF;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border: 0;
+  border-radius: 5px;
+  display: block;
+  padding: 20px;
+  font-size: 13px;
+}
+#myTable tbody, #tableUsers tbody {
+    width: 100%;
+    display: table;
+}
 
 
+.infoclient{
+  text-align:center;
+  margin: 0 0 30px 0;
+  background: #FFF;
+  padding: 20px 0;
+}
+
+.logout{
+  right: 10px;
+  position: absolute;
+}
+
+.navbar {
+    background: #555 !important;
+}
+
+.nav-link{
+    color: #fff !important;
+}
+
+.navbar-collapse {
+    border-left: 1px solid #999;

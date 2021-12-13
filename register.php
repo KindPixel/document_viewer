@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("lib.php");
 
 if($_SESSION["access"] != "999") {
@@ -18,37 +18,41 @@ include("navbar.php");
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
 	</div>
 
-<div class="registerbox">
-	
+<div class="registerbox maxwidthform">
+
+	<h5>Créer un utilisateur</h5>
+
 	<form id="register_form" name="form1" method="post">
 
-		<div class="form-group">
-			<label for="email">Login:</label>
-			<input type="text" class="form-control" id="login" placeholder="Login" name="Login">
-		</div>
-        <div class="form-group">
-			<label for="email">Name of the company:</label>
-			<input type="text" class="form-control" id="name-company" placeholder="Name of the company" name="Name of the company">
-		</div>
-		<div class="form-group">
-			<label for="pwd">Email:</label>
-			<input type="email" class="form-control" id="email" placeholder="Email" name="email">
-		</div>
-		<div class="form-group">
-			<label for="pwd">Password:</label>
-			<input type="password" class="form-control" id="password" placeholder="Password" name="password">
-		</div>
-        <div class="form-group">
-			<label for="pwd">Password confirmation:</label>
-			<input type="password" class="form-control" id="password-confirmation" placeholder="Password confirmation" name="password confirmation">
-		</div>
-        <div class="form-group">
-			<label for="pwd">Access level:</label>
-			<input class="form-control" id="access-level" placeholder="Access level" name="Access level">
+    <div class="form-group">
+			<label for="email">Nom de la compagnie</label>
+			<input type="text" class="form-control" id="name-company" placeholder="" name="Name of the company">
 		</div>
 
-		<input type="button" class="btn btn-primary" value="Submit" id="butsave">
-		<a href="login.php">Go back..</a>
+		<div class="form-group">
+			<label for="email">Nom d'utilisateur</label>
+			<input type="text" class="form-control" id="login" placeholder="" name="Login">
+		</div>
+
+		<div class="form-group">
+			<label for="pwd">Adresse email</label>
+			<input type="email" class="form-control" id="email" placeholder="" name="email">
+		</div>
+		<div class="form-group">
+			<label for="pwd">Créer un mot de passe</label>
+			<input type="password" class="form-control" id="password" placeholder="" name="password">
+		</div>
+        <div class="form-group">
+			<label for="pwd">Confirmer le mot de passe</label>
+			<input type="password" class="form-control" id="password-confirmation" placeholder="" name="password confirmation">
+		</div>
+        <div class="form-group">
+			<label for="pwd">Statut</label>
+			<input class="form-control" id="access-level" placeholder="" name="Access level">
+		</div>
+
+		<input type="button" class="btn btn-primary" value="Créer" id="butsave">
+		<!--<a href="login.php">Go back..</a>-->
 
 	</form>
 

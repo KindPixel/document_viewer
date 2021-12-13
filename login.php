@@ -9,16 +9,17 @@ if ($_SESSION['access'] != "") {
 <div class="loginbox">
 
 	<form id="login_form" method="post">
-		
+    <p class="logop"><img class="logoimg" src="img/logo.png" alt="Sunitech"></p>
+    <p class="titlelog">Se connecter</p>
 		<div class="form-group">
-			<label for="pwd">Login:</label>
-			<input class="form-control" id="login" placeholder="login" name="login">
+			<label for="pwd">Nom d'utilisateur</label>
+			<input class="form-control" id="login" placeholder="" name="login">
 		</div>
 		<div class="form-group">
-			<label for="pwd">Password:</label>
-			<input type="password" class="form-control" id="password" placeholder="Password" name="password">
+			<label for="pwd">Mot de passe</label>
+			<input type="password" class="form-control" id="password" placeholder="" name="password">
 		</div>
-		<input type="button" name="save" class="btn btn-primary" value="Login" id="butlogin">
+		<input type="button" name="save" class="btn btn-primary" value="Se connecter" id="butlogin">
 
 	</form>
 
