@@ -10,12 +10,13 @@ $result = $request->fetchAll(PDO::FETCH_ASSOC);
 $output = "";
 
 foreach ($result as $row) {
+    if($row['access'] == 999) {$access = "Admin";}else {$access = "User";}
     $output .='
     <tr class=' . $row["login"] . '>
     <td>' . $row["login"] . '</td>
     <td>' . $row["namecomp"] . '</td>
     <td>' . $row["mail"] . '</td>
-    <td>' . $row["access"] . '</td>
+    <td>' . $access . '</td>
     <td><button type="button" id="' . $row["login"] . '" class="btnSelect btn btn-danger btn-xs">Select</button></td>
     <td><button type="button" id="' . $row["login"] . '" class="btnDel btn btn-danger btn-xs">Supprimer</button></td>
     </tr>
