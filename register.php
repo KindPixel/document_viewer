@@ -9,6 +9,20 @@ if($_SESSION["access"] != "999") {
 include("navbar.php");
 ?>
 
+<style>
+
+.glyphicon-remove {
+    color: red;
+	font-size: 13px;
+}
+
+.glyphicon-ok {
+    color: green;
+	font-size:13px;
+}
+
+</style>
+
 <script type="text/javascript" src="js/registerscript.js"></script>
 
     <div class="alert alert-success alert-dismissible" id="success" style="display:none;">
@@ -30,8 +44,13 @@ include("navbar.php");
 		</div>
 
 		<div class="form-group">
-			<label for="email">Nom d'utilisateur</label>
+			<label>Nom d'utilisateur</label>
 			<input type="text" class="form-control" id="login" placeholder="" name="Login" required>
+		</div>
+
+		<div class="form-group">
+			<label>Nom - Prénom</label>
+			<input type="text" class="form-control" id="AllName" placeholder="" name="AllName" required>
 		</div>
 
 		<div class="form-group">
@@ -41,10 +60,15 @@ include("navbar.php");
 		<div class="form-group">
 			<label for="pwd">Créer un mot de passe</label>
 			<input type="password" class="form-control" id="password" placeholder="" name="password" required>
+			<div id="Length" class="glyphicon glyphicon-remove">Must be at least 7 charcters</div>
+			<div id="UpperCase" class="glyphicon glyphicon-remove">Must have atleast 1 upper case character</div>
+			<div id="LowerCase" class="glyphicon glyphicon-remove">Must have atleast 1 lower case character</div>
+			<div id="Numbers" class="glyphicon glyphicon-remove">Must have atleast 1 numeric character</div>
+			<div id="Symbols" class="glyphicon glyphicon-remove">Must have atleast 1 special character</div>
 		</div>
         <div class="form-group">
 			<label for="pwd">Confirmer le mot de passe</label>
-			<input type="password" class="form-control" id="password-confirmation" placeholder="" name="password confirmation" required>
+			<input type="password" class="form-control" id="password-confirmation" name="password confirmation" required>
 		</div>
         <div class="form-group">
 			<label for="pwd">Statut</label>

@@ -12,7 +12,7 @@ if($_SESSION["access"] == "") {
 <?php include("navbar.php")?>
 
 <div class="infoclient">
-  <h3>Bonjour <?php echo ($_SESSION['namecomp']); ?></h3>
+  <h3>Bonjour <?php echo ($_SESSION['allName']); ?></h3>
   <p>Bienvenue dans votre Tableau de bord</p>
 </div>
 

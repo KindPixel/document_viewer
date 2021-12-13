@@ -21,6 +21,7 @@
         $_SESSION['mail'] = $users['mail'];
         $_SESSION['access'] = $users['access'];
         $_SESSION['id'] = $users['id'];
+        $_SESSION['allName'] = $users['allName'];
         echo 200;
     }
     else {
