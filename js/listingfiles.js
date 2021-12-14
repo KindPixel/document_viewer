@@ -50,7 +50,9 @@ $(document).ready(function () {
 
         var url = "../document_viewer/pages/"+col2;
 
-        window.open(url,'popup','width=550,height=800');
+        var param = 'width=550,height=800,scrollbars=no,status=no,location=no,toolbar=no,menubar=no';
+
+        window.open(url,'popup',param);
     });
 
 });
