@@ -69,16 +69,22 @@ $(document).ready(function () {
             }
         } else {
             $("#error").show();
-                $("#error").html("Le mots de passe n'est pas conforme");
-                setTimeout(fade_out, 5000);
-                function fade_out() {
-                    $("#error").hide().empty();
-                }
+            $("#error").html("Le mots de passe n'est pas conforme");
+            setTimeout(fade_out, 5000);
+            function fade_out() {
+                $("#error").hide().empty();
+            }
         }
 
     });
 
     $("#password").on("keyup", ValidatePassword);
+
+    $('.toggle-password').click(function(){
+        $(this).children().toggleClass('mdi-eye-outline mdi-eye-off-outline');
+        let input = $(this).prev();
+        input.attr('type', input.attr('type') === 'password' ? 'text' : 'password');
+    });
 });
 
 function validateEmail(email) {

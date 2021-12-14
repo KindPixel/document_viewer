@@ -1,6 +1,6 @@
 <?php include("lib.php");
 if ($_SESSION['access'] != "") {
-    header("Location: home.php");
+	header("Location: home.php");
 }
 ?>
 
@@ -15,10 +15,17 @@ if ($_SESSION['access'] != "") {
 			<label for="pwd">Nom d'utilisateur</label>
 			<input class="form-control" id="login" name="login">
 		</div>
+
 		<div class="form-group">
-			<label for="pwd">Mot de passe</label>
-			<input type="password" class="form-control" id="password" name="password">
+			<label>Password</label>
+			<div class="input-group">
+				<input type="password" class="form-control" name="password" autocomplete="new-password" id="password">
+				<div class="input-group-append toggle-password">
+					<span class="input-group-text mdi mdi-eye-outline"></span>
+				</div>
+			</div>
 		</div>
+
 		<input type="button" name="save" class="btn btn-primary" value="Se connecter" id="butlogin">
 	</form>
 
