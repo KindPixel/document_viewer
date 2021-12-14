@@ -23,7 +23,6 @@ if($_SESSION["access"] == "") {
 
 <table id="myTable">
     <tr>
-        <th>Id</th>
         <th>Document</th>
         <th style="text-align:right">Action</th>
     </tr>
