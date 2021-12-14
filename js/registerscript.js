@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $("#butsave").on("click", function () {
         var login = $("#login").val();
         var namecomp = $("#name-company").val();
@@ -8,68 +9,95 @@ $(document).ready(function () {
         var access = $("#access-level").val();
         var allName = $("#AllName").val();
 
-        const regexPassword =
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-        if (regexPassword.test(password)) {
-            if (password == password_conf && validateEmail(email)) {
-                $.ajax({
-                    url: "php/registerscript.php",
-                    type: "POST",
-                    data: {
-                        login: login,
-                        namecomp: namecomp,
-                        email: email,
-                        password: password,
-                        password_conf: password_conf,
-                        access: access,
-                        allName: allName
-                    },
-                    cache: false,
-                    success: function (dataResult) {
-                        statusCode = dataResult.substr(dataResult.length - 3);
-                        if (statusCode == 200) {
-                            $("#success").show();
-                            $("#success").html("Création de compte réussi !");
-                            setTimeout(fade_out, 5000);
-                            function fade_out() {
-                                $("#success").hide().empty();
-                            }
-                        } else if (statusCode == 201) {
-                            $("#error").show();
-                            $("#error").html("Ce nom d'utilisateur est déjà enregistrer :/");
-                            setTimeout(fade_out, 5000);
-                            function fade_out() {
-                                $("#error").hide().empty();
-                            }
-                        } else if (statusCode == 202) {
-                            $("#error").show();
-                            $("#error").html("Cette adresse email est déjà enregistrer :/");
-                            setTimeout(fade_out, 5000);
-                            function fade_out() {
-                                $("#error").hide().empty();
-                            }
-                        } else if (statusCode == 203) {
-                            $("#error").show();
-                            $("#error").html("Une erreur est survenue");
-                            setTimeout(fade_out, 5000);
-                            function fade_out() {
-                                $("#error").hide().empty();
-                            }
+        const regexEmail = /\S+@\S+\.\S+/;
+
+        if (login != "" || namecomp != "" || email != "" || password != "" || password_conf != "" || access != "" || allName != "") {
+
+            if (regexEmail.test(email)) {
+
+                if (regexPassword.test(password)) {
+
+                    if (password == password_conf) {
+
+                        $.ajax({
+                            url: "php/registerscript.php",
+                            type: "POST",
+                            data: {
+                                login: login,
+                                namecomp: namecomp,
+                                email: email,
+                                password: password,
+                                password_conf: password_conf,
+                                access: access,
+                                allName: allName
+                            },
+                            cache: false,
+                            success: function (dataResult) {
+                                statusCode = dataResult.substr(dataResult.length - 3);
+                                if (statusCode == 200) {
+                                    $("#success").show();
+                                    $("#success").html("Création de compte réussi !");
+                                    setTimeout(fade_out, 5000);
+                                    function fade_out() {
+                                        $("#success").hide().empty();
+                                    }
+                                } else if (statusCode == 201) {
+                                    $("#error").show();
+                                    $("#error").html("Ce nom d'utilisateur est déjà enregistrer :/");
+                                    setTimeout(fade_out, 5000);
+                                    function fade_out() {
+                                        $("#error").hide().empty();
+                                    }
+                                } else if (statusCode == 202) {
+                                    $("#error").show();
+                                    $("#error").html("Cette adresse email est déjà enregistrer :/");
+                                    setTimeout(fade_out, 5000);
+                                    function fade_out() {
+                                        $("#error").hide().empty();
+                                    }
+                                } else if (statusCode == 203) {
+                                    $("#error").show();
+                                    $("#error").html("Une erreur est survenue");
+                                    setTimeout(fade_out, 5000);
+                                    function fade_out() {
+                                        $("#error").hide().empty();
+                                    }
+                                }
+                            },
+                        });
+
+                    } else {
+                        $("#error").show();
+                        $("#error").html("Les deux mots de passe ne sont pas identique");
+                        setTimeout(fade_out, 5000);
+                        function fade_out() {
+                            $("#error").hide().empty();
                         }
-                    },
-                });
+                    }
+
+                } else {
+                    $("#error").show();
+                    $("#error").html("Le mots de passe n'est pas conforme");
+                    setTimeout(fade_out, 5000);
+                    function fade_out() {
+                        $("#error").hide().empty();
+                    }
+                }
+
             } else {
                 $("#error").show();
-                $("#error").html("Les deux mots de passe ne sont pas identique");
+                $("#error").html("L'adresse Mail n'est pas conforme");
                 setTimeout(fade_out, 5000);
                 function fade_out() {
                     $("#error").hide().empty();
                 }
             }
+
         } else {
             $("#error").show();
-            $("#error").html("Le mots de passe n'est pas conforme");
+            $("#error").html("Veuillez remplir tout les champs");
             setTimeout(fade_out, 5000);
             function fade_out() {
                 $("#error").hide().empty();
@@ -80,17 +108,13 @@ $(document).ready(function () {
 
     $("#password").on("keyup", ValidatePassword);
 
-    $('.toggle-password').click(function(){
+    $('.toggle-password').click(function () {
         $(this).children().toggleClass('mdi-eye-outline mdi-eye-off-outline');
         let input = $(this).prev();
         input.attr('type', input.attr('type') === 'password' ? 'text' : 'password');
     });
 });
 
-function validateEmail(email) {
-    var re = /\S+@\S+\.\S+/;
-    return re.test(email);
-}
 
 /*Actual validation function*/
 function ValidatePassword() {

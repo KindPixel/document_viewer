@@ -47,7 +47,7 @@ include("navbar.php");
 		</div>
 
 		<div class="form-group">
-			<label>Nom - Prénom</label>
+			<label>Prénom - Nom</label>
 			<input type="text" class="form-control" id="AllName" placeholder="" name="AllName" required>
 		</div>
 
