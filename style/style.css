@@ -43,6 +43,10 @@ body {
     box-shadow:none;
 }
 
+#register_form select {
+  margin-top:15px;
+}
+
 
 
 
