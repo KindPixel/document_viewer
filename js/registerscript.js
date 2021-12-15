@@ -39,31 +39,20 @@ $(document).ready(function () {
                                 if (statusCode == 200) {
                                     $("#success").show();
                                     $("#success").html("Création de compte réussi !");
-                                    setTimeout(fade_out, 5000);
-                                    function fade_out() {
-                                        $("#success").hide().empty();
-                                    }
+                                    $('#register_form').find('#access-level').prop('selectedIndex',0);
+                                    $('#register_form').find("input, textarea").val("");
                                 } else if (statusCode == 201) {
                                     $("#error").show();
                                     $("#error").html("Ce nom d'utilisateur est déjà enregistrer :/");
-                                    setTimeout(fade_out, 5000);
-                                    function fade_out() {
-                                        $("#error").hide().empty();
-                                    }
+                                    
                                 } else if (statusCode == 202) {
                                     $("#error").show();
                                     $("#error").html("Cette adresse email est déjà enregistrer :/");
-                                    setTimeout(fade_out, 5000);
-                                    function fade_out() {
-                                        $("#error").hide().empty();
-                                    }
+
                                 } else if (statusCode == 203) {
                                     $("#error").show();
                                     $("#error").html("Une erreur est survenue");
-                                    setTimeout(fade_out, 5000);
-                                    function fade_out() {
-                                        $("#error").hide().empty();
-                                    }
+                                    
                                 }
                             },
                         });
@@ -71,37 +60,25 @@ $(document).ready(function () {
                     } else {
                         $("#error").show();
                         $("#error").html("Les deux mots de passe ne sont pas identique");
-                        setTimeout(fade_out, 5000);
-                        function fade_out() {
-                            $("#error").hide().empty();
-                        }
+                        
                     }
 
                 } else {
                     $("#error").show();
                     $("#error").html("Le mots de passe n'est pas conforme");
-                    setTimeout(fade_out, 5000);
-                    function fade_out() {
-                        $("#error").hide().empty();
-                    }
+                    
                 }
 
             } else {
                 $("#error").show();
                 $("#error").html("L'adresse Mail n'est pas conforme");
-                setTimeout(fade_out, 5000);
-                function fade_out() {
-                    $("#error").hide().empty();
-                }
+                
             }
 
         } else {
             $("#error").show();
             $("#error").html("Veuillez remplir tout les champs");
-            setTimeout(fade_out, 5000);
-            function fade_out() {
-                $("#error").hide().empty();
-            }
+            
         }
 
     });

@@ -31,7 +31,7 @@ $(document).ready(function () {
 
                     var index = indexInArray+1;
 
-                    markup = "<tr style='cursor: pointer;'><td>" + index + "</td><td>" + valueOfElement + "</td><td style='text-align: right;'>" + btn + "</td></tr>";
+                    markup = "<tr style='cursor: pointer;'><td>" + valueOfElement + "</td><td style='text-align: right;'>" + btn + "</td></tr>";
 
                     tableBody = $("#myTable");
                     tableBody.append(markup);

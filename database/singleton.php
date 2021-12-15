@@ -6,7 +6,7 @@ $options = [
   PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, //make the default fetch be an associative array
 ];
 try {
-    $pdo = new PDO($dsn, "root", "root", $options);
+    $pdo = new PDO($dsn, "root", "", $options);
     print_r($pdo);
 } catch (Exception $e) {
     error_log($e->getMessage());
