@@ -71,11 +71,11 @@ include("navbar.php");
 				</div>
 
 				<div class="password-helper" style="display:none">
-					<div id="Length" class="glyphicon glyphicon-remove">Doit contenir au moins 7 fusibles</div>
-					<div id="UpperCase" class="glyphicon glyphicon-remove">Doit avoir au moins 1 caractère majuscule</div>
+					<div id="Length" class="glyphicon glyphicon-remove">Doit contenir au moins huit caractères</div>
+					<div id="UpperCase" class="glyphicon glyphicon-remove">Doit avoir au moins un caractère majuscule</div>
 					<div id="LowerCase" class="glyphicon glyphicon-remove">Doit avoir au moins un caractère minuscule</div>
-					<div id="Numbers" class="glyphicon glyphicon-remove">Doit avoir au moins 1 caractère numérique</div>
-					<div id="Symbols" class="glyphicon glyphicon-remove">Doit avoir au moins 1 caractère spécial</div>
+					<div id="Numbers" class="glyphicon glyphicon-remove">Doit avoir au moins un caractère numérique</div>
+					<div id="Symbols" class="glyphicon glyphicon-remove">Doit avoir au moins un caractère spécial</div>
 				</div>
 
 			</div>
@@ -95,7 +95,7 @@ include("navbar.php");
 		</div>
 
 		<div class="form-group">
-			<label>Status</label>
+			<label>Statut</label>
 			<select id="access-level" data-theme="a" data-mini="true">
 				<option value="1">Utilisateur</option>
 				<option value="999">Administrateur</option>
