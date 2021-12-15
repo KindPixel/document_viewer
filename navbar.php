@@ -12,12 +12,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="home.php" id="">Accueil</a>
             </li>
-            <!--li class="nav-item">
-                <a class="nav-link"><?php echo ($_SESSION['mail']); ?></a>
-            </li-->
-            <!--li class="nav-item">
-                <a class="nav-link">Compagnie: <?php echo ($_SESSION['namecomp']); ?></a>
-            </li-->
             <?php
             if ($_SESSION['access'] == "999") {
             echo '<li class="nav-item"><a class="nav-link" href="register.php">Créer un utilisateur</a></li>';
