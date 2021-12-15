@@ -37,6 +37,7 @@ $(document).ready(function () {
                             success: function (dataResult) {
                                 statusCode = dataResult.substr(dataResult.length - 3);
                                 if (statusCode == 200) {
+                                    $("#error").hide();
                                     $("#success").show();
                                     $("#success").html("Création de compte réussi !");
                                     $('#register_form').find('#access-level').prop('selectedIndex',0);

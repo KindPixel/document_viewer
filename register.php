@@ -68,11 +68,13 @@ include("navbar.php");
 				</div>
 			</div>
 
-			<div id="Length" class="glyphicon glyphicon-remove">Must be at least 7 charcters</div>
-			<div id="UpperCase" class="glyphicon glyphicon-remove">Must have atleast 1 upper case character</div>
-			<div id="LowerCase" class="glyphicon glyphicon-remove">Must have atleast 1 lower case character</div>
-			<div id="Numbers" class="glyphicon glyphicon-remove">Must have atleast 1 numeric character</div>
-			<div id="Symbols" class="glyphicon glyphicon-remove">Must have atleast 1 special character</div>
+			<span>
+			<span id="Length" class="glyphicon glyphicon-remove">Must be at least 7 charcters</span>
+			<span id="UpperCase" class="glyphicon glyphicon-remove">Must have atleast 1 upper case character</span>
+			<span id="LowerCase" class="glyphicon glyphicon-remove">Must have atleast 1 lower case character</span>
+			<span id="Numbers" class="glyphicon glyphicon-remove">Must have atleast 1 numeric character</span>
+			<span id="Symbols" class="glyphicon glyphicon-remove">Must have atleast 1 special character</span>
+			</span>
 
 		</div>
 
@@ -87,7 +89,7 @@ include("navbar.php");
 		</div>
 
 		<div class="form-group">
-			<label>Password</label>
+			<label>Status</label>
 			<select id="access-level" data-theme="a" data-mini="true">
 				<option value=""> </option>
 				<option value="999">Administrateur</option>

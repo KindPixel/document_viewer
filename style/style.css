@@ -44,7 +44,11 @@ body {
 }
 
 #register_form select {
-  margin-top:15px;
+
+}
+
+#register_form label {
+  display:block;
 }
 
 
@@ -242,4 +246,8 @@ text-align: left;
 }
 
 
-    
+label { display: inline-block; }
+
+div {
+	position: relative;
+}
