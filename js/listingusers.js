@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $.ajax({
         type: "GET",
         url: "php/listingusers.php",
@@ -34,4 +35,5 @@ $(document).ready(function () {
             });
         }
     });
+    
 });
