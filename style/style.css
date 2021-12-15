@@ -1,5 +1,5 @@
 body {
-    background: #ebeff2;
+  background: #ebeff2;
 }
 
 .loginbox {
@@ -8,53 +8,49 @@ body {
 
 .loginbox input {
   font-size: 13px;
-  border:1px solid #DDD;
-  box-shadow:none;
+  border: 1px solid #ddd;
+  box-shadow: none;
   border-radius: 3px;
 }
 .loginbox input:hover {
-    border:1px solid cornflowerblue;
+  border: 1px solid cornflowerblue;
 }
 .loginbox input:focus {
-    border:1px solid cornflowerblue;
-    box-shadow:none;
+  border: 1px solid cornflowerblue;
+  box-shadow: none;
 }
 .loginbox input:active {
-    border:1px solid cornflowerblue;
-    box-shadow:none;
+  border: 1px solid cornflowerblue;
+  box-shadow: none;
 }
-
 
 #register_form input {
   font-size: 13px;
-  border:1px solid #DDD;
-  box-shadow:none;
+  border: 1px solid #ddd;
+  box-shadow: none;
   border-radius: 3px;
 }
 #register_form input:hover {
-    border:1px solid #fa7418;
+  border: 1px solid #fa7418;
 }
 #register_form input:focus {
-    border:1px solid #fa7418;
-    box-shadow:none;
+  border: 1px solid #fa7418;
+  box-shadow: none;
 }
 #register_form input:active {
-    border:1px solid #fa7418;
-    box-shadow:none;
+  border: 1px solid #fa7418;
+  box-shadow: none;
 }
 
 #register_form select {
-
 }
 
 #register_form label {
-  display:block;
+  display: block;
 }
 
-
-
-
-#butlogin, #butsave{
+#butlogin,
+#butsave {
   width: 100%;
   margin-top: 15px;
   border-radius: 3px;
@@ -62,7 +58,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   background: #fa7418;
-  box-shadow:none
+  box-shadow: none;
 }
 
 .registerbox {
@@ -83,13 +79,12 @@ a {
   text-decoration: none;
 }
 
-
 #myTable {
   margin: 20px;
 }
 
 #myTable td {
-  padding:3px 0px;
+  padding: 3px 0px;
 }
 .btnSelect {
   background-color: #fa7418;
@@ -116,7 +111,7 @@ a {
   border: 0px;
 }
 
-.navbar .container-fluid>.navbar-header {
+.navbar .container-fluid > .navbar-header {
   float: left;
   margin-right: 10px;
 }
@@ -125,129 +120,141 @@ a {
   margin: 5px;
   font-size: 14px;
 }
-.nav>li {
+.nav > li {
   float: left;
 }
 
-.logop{
+.logop {
   text-align: left;
 }
 
-.logoimg{
+.logoimg {
   width: 75px;
 }
 
-.titlelog{
-  color:#222;
-  font-weight:500;
+.titlelog {
+  color: #222;
+  font-weight: 500;
   font-size: 18px;
-text-align: left;
+  text-align: left;
 }
 
 #acessdoc {
-  margin:15px;
+  margin: 15px;
 }
 
 .btn-submit {
-  margin:15px;
+  margin: 15px;
 }
 
-#login_form{
+#login_form {
   max-width: 300px;
   margin: 0 auto;
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   padding: 25px;
   border-radius: 8px;
-  background: #FFF;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 #login_form label {
-    font-size: 13px;
-    color: #555;
+  font-size: 13px;
+  color: #555;
 }
 
-.form-group{
-  margin-top:5px;
+.form-group {
+  margin-top: 5px;
 }
 
-#register_form{
+#register_form {
   max-width: 400px;
   margin: 0 auto;
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   padding: 25px;
   border-radius: 8px;
-  background: #FFF;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 #register_form label {
-    font-size: 13px;
-    color: #555;
+  font-size: 13px;
+  color: #555;
 }
 
-.form-group{
-  margin-top:5px;
+.form-group {
+  margin-top: 5px;
 }
 
-.maxwidth{
+.maxwidth {
   margin: 0 auto;
   margin-top: 35px;
   width: 100%;
   max-width: 700px;
 }
-.maxwidthform{
+.maxwidthform {
   margin: 0 auto;
   margin-top: 40px;
   width: 100%;
   max-width: 400px;
 }
 
-#myTable, #tableUsers{
+#myTable,
+#tableUsers {
   margin: 0 auto;
   width: 100%;
   max-width: 700px;
-  background: #FFF;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border: 0;
   border-radius: 5px;
   display: block;
   padding: 20px;
   font-size: 13px;
 }
-#myTable tbody, #tableUsers tbody {
-    width: 100%;
-    display: table;
+#myTable tbody,
+#tableUsers tbody {
+  width: 100%;
+  display: table;
 }
 
-
-.infoclient{
-  text-align:center;
+.infoclient {
+  text-align: center;
   margin: 0 0 30px 0;
-  background: #FFF;
+  background: #fff;
   padding: 20px 0;
 }
 
-.logout{
+.logout {
   right: 10px;
   position: absolute;
 }
 
 .navbar {
-    background: #555 !important;
+  background: #555 !important;
 }
 
-.nav-link{
-    color: #fff !important;
+.nav-link {
+  color: #fff !important;
 }
 
 .navbar-collapse {
-    border-left: 1px solid #999;
+  border-left: 1px solid #999;
 }
 
-
-label { display: inline-block; }
+label {
+  display: inline-block;
+}
 
 div {
-	position: relative;
+  position: relative;
+}
+.password-helper {
+  border:1px solid black;
+  display: inline-block;
+  background-color: white;
+  position:fixed;
+  z-index: 999;
 }

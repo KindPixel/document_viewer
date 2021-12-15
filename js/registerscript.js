@@ -91,6 +91,22 @@ $(document).ready(function () {
         let input = $(this).prev();
         input.attr('type', input.attr('type') === 'password' ? 'text' : 'password');
     });
+
+
+    // while ($( "#password" ).focus()) {
+    //     $(".password-helper").show();
+    // }
+
+    $("#password").focus(function (e) { 
+        e.preventDefault();
+        $(".password-helper").show();
+    });
+
+    $("#password").focusout(function (e) { 
+        e.preventDefault();
+        $(".password-helper").hide();
+    });
+
 });
 
 
