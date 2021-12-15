@@ -57,6 +57,7 @@ include("navbar.php");
 		</div>
 
 		<div class="form-group">
+
 			<div class="form-group">
 				<label>Password</label>
 				<div class="input-group">
@@ -76,9 +77,16 @@ include("navbar.php");
 		</div>
 
 		<div class="form-group">
-			<label for="pwd">Confirmer le mot de passe</label>
-			<input type="password" class="form-control" id="password-confirmation" name="password confirmation" required>
-		</div>
+				<label>Password confirmation</label>
+				<div class="input-group">
+					<input type="password" class="form-control" name="password" autocomplete="new-password" id="password-confirmation">
+					<div class="input-group-append toggle-password">
+						<span class="input-group-text mdi mdi-eye-outline"></span>
+					</div>
+				</div>
+			</div>
+
+
 		<select id="access-level" data-theme="a" data-mini="true">
 			<option value=""> </option>
 			<option value="999">Administrateur</option>

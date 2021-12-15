@@ -13,7 +13,7 @@ $(document).ready(function () {
 
         const regexEmail = /\S+@\S+\.\S+/;
 
-        if (login != "" || namecomp != "" || email != "" || password != "" || password_conf != "" || access != "" || allName != "") {
+        if (login != "" && namecomp != "" && email != "" && password != "" && password_conf != "" && access != "" && allName != "") {
 
             if (regexEmail.test(email)) {
 
