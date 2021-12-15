@@ -16,7 +16,7 @@ else if ($_SESSION["access"] != "999") {
 
 <div class="maxwidth">
 
-  <h5>Liste des utilisateurs</h5>
+<h5>Liste des utilisateurs</h5>
 
 <table border='1' id="tableUsers">
     <tr>
