@@ -10,76 +10,76 @@ $(document).ready(function () {
         var allName = $("#AllName").val();
 
         const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
         const regexEmail = /\S+@\S+\.\S+/;
+        const regexLogin = /^[A-Za-z]+$/;
+
 
         if (login != "" && namecomp != "" && email != "" && password != "" && password_conf != "" && access != "" && allName != "") {
 
-            if (regexEmail.test(email)) {
+            if (regexLogin.test(login)) {
 
-                if (regexPassword.test(password)) {
+                if (regexEmail.test(email)) {
 
-                    if (password == password_conf) {
-
-                        $.ajax({
-                            url: "php/registerscript.php",
-                            type: "POST",
-                            data: {
-                                login: login,
-                                namecomp: namecomp,
-                                email: email,
-                                password: password,
-                                password_conf: password_conf,
-                                access: access,
-                                allName: allName
-                            },
-                            cache: false,
-                            success: function (dataResult) {
-                                statusCode = dataResult.substr(dataResult.length - 3);
-                                if (statusCode == 200) {
-                                    $("#error").hide();
-                                    $("#success").show();
-                                    $("#success").html("Création de compte réussi !");
-                                    $('#register_form').find('#access-level').prop('selectedIndex',0);
-                                    $('#register_form').find("input, textarea").val("");
-                                } else if (statusCode == 201) {
-                                    $("#error").show();
-                                    $("#error").html("Ce nom d'utilisateur est déjà enregistrer :/");
-                                    
-                                } else if (statusCode == 202) {
-                                    $("#error").show();
-                                    $("#error").html("Cette adresse email est déjà enregistrer :/");
-
-                                } else if (statusCode == 203) {
-                                    $("#error").show();
-                                    $("#error").html("Une erreur est survenue");
-                                    
-                                }
-                            },
-                        });
-
+                    if (regexPassword.test(password)) {
+    
+                        if (password == password_conf) {
+    
+                            $.ajax({
+                                url: "php/registerscript.php",
+                                type: "POST",
+                                data: {
+                                    login: login,
+                                    namecomp: namecomp,
+                                    email: email,
+                                    password: password,
+                                    password_conf: password_conf,
+                                    access: access,
+                                    allName: allName
+                                },
+                                cache: false,
+                                success: function (dataResult) {
+                                    statusCode = dataResult.substr(dataResult.length - 3);
+                                    if (statusCode == 200) {
+                                        $("#error").hide();
+                                        $("#success").show();
+                                        $("#success").html("Création de compte réussi !");
+                                        $('#register_form').find('#access-level').prop('selectedIndex',0);
+                                        $('#register_form').find("input, textarea").val("");
+                                    } else if (statusCode == 201) {
+                                        $("#error").show();
+                                        $("#error").html("Ce nom d'utilisateur est déjà enregistrer :/"); 
+                                    } else if (statusCode == 202) {
+                                        $("#error").show();
+                                        $("#error").html("Cette adresse email est déjà enregistrer :/");
+                                    } else if (statusCode == 203) {
+                                        $("#error").show();
+                                        $("#error").html("Une erreur est survenue");
+                                    }
+                                },
+                            });
+    
+                        } else {
+                            $("#error").show();
+                            $("#error").html("Les deux mots de passe ne sont pas identique");
+                        }
+    
                     } else {
                         $("#error").show();
-                        $("#error").html("Les deux mots de passe ne sont pas identique");
-                        
+                        $("#error").html("Le mots de passe n'est pas conforme");
                     }
-
+    
                 } else {
                     $("#error").show();
-                    $("#error").html("Le mots de passe n'est pas conforme");
-                    
+                    $("#error").html("L'adresse Mail n'est pas conforme");
                 }
-
             } else {
                 $("#error").show();
-                $("#error").html("L'adresse Mail n'est pas conforme");
-                
+                $("#error").html("Le login ne doit pas contenir d'espace ou de caractère spécial");
             }
 
         } else {
             $("#error").show();
             $("#error").html("Veuillez remplir tout les champs");
-            
         }
 
     });

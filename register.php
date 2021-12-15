@@ -61,7 +61,7 @@ include("navbar.php");
 		<div class="form-group">
 
 			<div class="form-group">
-				
+
 				<label>Password</label>
 				<div class="input-group">
 					<input type="password" class="form-control" name="password" autocomplete="new-password" id="password">
@@ -70,7 +70,7 @@ include("navbar.php");
 					</div>
 				</div>
 
-				<div class="password-helper" style="display:block">
+				<div class="password-helper" style="display:none">
 					<div id="Length" class="glyphicon glyphicon-remove">Doit contenir au moins 7 fusibles</div>
 					<div id="UpperCase" class="glyphicon glyphicon-remove">Doit avoir au moins 1 caractère majuscule</div>
 					<div id="LowerCase" class="glyphicon glyphicon-remove">Doit avoir au moins un caractère minuscule</div>
@@ -102,7 +102,7 @@ include("navbar.php");
 			</select>
 		</div>
 
-		<input type="button" class="btn btn-primary" value="Créer" id="butsave">
+		<button type="button" class="btn btn-primary" value="Créer" id="butsave"> Créer</button>
 
 	</form>
 
