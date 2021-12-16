@@ -20,8 +20,8 @@ else if ($_SESSION["access"] != "999") {
 
 <table border='1' id="tableUsers">
     <tr>
-        <th>Utilisateur</th>
-        <th>Nom</th>
+        <th>Nom société</th>
+        <th>Nom utilisateur</th>
         <th>Email</th>
         <th>Statut</th>
         <th>Actions</th>
