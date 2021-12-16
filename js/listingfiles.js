@@ -4,9 +4,10 @@ $(document).ready(function () {
         type: "GET",
         url: "php/listingusersfiles.php",
         success: function (response) {
-            response = response.substring(34);
+            response = response.substring(32);
             response = response.slice(0, -3);
             response = response.replaceAll(/\\/g, '');
+            console.log(response);
 
             if (response != "") {
                 response = JSON.parse(response);

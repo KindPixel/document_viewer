@@ -1,6 +1,7 @@
 <?php
-require '../database/singleton.php';
 session_start();
+require '../database/singleton.php';
+
 
 $login = $_SESSION["login"];
 

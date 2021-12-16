@@ -12,7 +12,7 @@ $(document).ready(function () {
     $("#tableUsers").on("click", ".btnSelect", function () {
         var currentId = $(this).attr("id");
 
-        var url = new URL("http://localhost/document_viewer/singleuser.php");
+        var url = new URL("http://thomissantos.com/document_viewer/singleuser.php");
         url.searchParams.append("login", currentId);
 
         window.location.href = url;

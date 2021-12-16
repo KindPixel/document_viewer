@@ -4,7 +4,7 @@ $(document).ready(function(){
             $.ajax({
                 url: "php/logout.php",
                 success: function (response) {
-                    window.location.href = "http://localhost/document_viewer/login.php";
+                    window.location.href = "http://thomissantos.com/document_viewer/login.php";
                 }
             });
         }

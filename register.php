@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("lib.php");
 
 if ($_SESSION["access"] != "999") {

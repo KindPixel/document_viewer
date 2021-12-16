@@ -5,6 +5,7 @@ $(document).ready(function () {
         type: "GET",
         cache: false,
         success: function (dataResult) {
+            console.log(dataResult);
             dataResult = JSON.parse(dataResult);
             dataResult = Object.values(dataResult);
 
@@ -17,11 +18,9 @@ $(document).ready(function () {
                 url: "php/checkUserAccess.php",
                 data: { login: login },
                 success: function (data) {
-
-                
                     response = data;
 
-                    response = response.substring(34);
+                    response = response.substring(32);
                     response = response.slice(0, -3);
                     response = response.replaceAll(/\\/g, '');
                     
@@ -33,6 +32,7 @@ $(document).ready(function () {
                         });
                     }
                     else {
+                        console.log(response);
                         response = JSON.parse(response);
                         $.each(dataResult, function (indexInArray, valueOfElement) {
 

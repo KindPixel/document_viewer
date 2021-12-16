@@ -1,4 +1,5 @@
 <?php include("lib.php");
+session_start();
 if ($_SESSION['access'] != "") {
 	header("Location: home.php");
 }

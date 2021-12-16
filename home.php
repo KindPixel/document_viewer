@@ -1,15 +1,16 @@
 <?php
+session_start();
 include("lib.php");
 
 if($_SESSION["access"] == "") {
     header("Location: login.php");
-    die();
 }
 ?>
 
 <script type="text/javascript" src="js/listingfiles.js"></script>
 
 <?php include("navbar.php")?>
+
 
 <div class="infoclient">
     <h3>Bonjour <?php echo ($_SESSION['allName']); ?></h3>

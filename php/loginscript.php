@@ -1,8 +1,7 @@
 <?php
-
+    session_start();
     require '../database/singleton.php';
     
-    session_start();
 
     $login = $_POST['login'];
     $password = $_POST['password'];
@@ -15,7 +14,6 @@
     $users = $request->fetch(PDO::FETCH_ASSOC);
 
     if (password_verify($password, $users['password'])) {
-        session_start();
         $_SESSION['login'] = $users['login'];
         $_SESSION['namecomp'] = $users['namecomp'];
         $_SESSION['mail'] = $users['mail'];

@@ -1,11 +1,11 @@
+<?php    session_start(); ?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
 
     <a href="home.php" class="navbar-brand">
         <img class="logoimg" src="img/logo.png" alt="Sunitech">
     </a>
-
-    
-    </button>
 
     <div class="navbar-collapse">
         <ul class="navbar-nav mr-auto">
