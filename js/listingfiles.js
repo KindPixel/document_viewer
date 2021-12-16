@@ -13,7 +13,6 @@ $(document).ready(function () {
                 $.each(response, function (indexInArray, valueOfElement) {
                     href = "../document_viewer/pages/" + this;
                     var btn = "<button class='btnSelect'>Visualiser</button>";
-
                     $.ajax({
                         url: "pages/" + valueOfElement,
                         success: function (data) {
