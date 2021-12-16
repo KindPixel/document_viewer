@@ -21,7 +21,7 @@ $(document).ready(function () {
                 
                     response = data;
 
-                    response = response.substring(32);
+                    response = response.substring(34);
                     response = response.slice(0, -3);
                     response = response.replaceAll(/\\/g, '');
                     
