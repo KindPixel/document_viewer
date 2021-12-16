@@ -251,9 +251,11 @@ div {
   position: relative;
 }
 .password-helper {
-  border:1px solid black;
   display: inline-block;
-  background-color: white;
-  position:fixed;
+  background-color: cornsilk;
+  position: fixed;
   z-index: 999;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

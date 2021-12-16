@@ -5,6 +5,7 @@
   // $password = 'EXTELPASS00!';
   // $dbh = 'document_viewer';
 
+<<<<<<< Updated upstream
   // try {
   //   $dbh = new PDO("mysql:host=$host_name; dbname=$database;", $user_name, $password);
   // } catch (PDOException $e) {
@@ -21,6 +22,13 @@ try {
     print_r($pdo);
 } catch (PDOException $e) {
     print "Erreur !: " . $e->getMessage() . "<br/>";
+=======
+  try {
+    $dbh = new PDO("mysql:host=$host_name; dbname=$database;", $user_name, $password);
+    print_r($dbh);
+  } catch (PDOException $e) {
+    echo "Erreur!: " . $e->getMessage() . "<br/>";
+>>>>>>> Stashed changes
     die();
 }
 ?>
