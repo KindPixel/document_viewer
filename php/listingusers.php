@@ -13,8 +13,8 @@ foreach ($result as $row) {
     if($row['access'] == 999) {$access = "Admin";}else {$access = "User";}
     $output .='
     <tr class=' . $row["login"] . '>
-    <td>' . $row["login"] . '</td>
     <td>' . $row["namecomp"] . '</td>
+    <td>' . $row["login"] . '</td>
     <td>' . $row["mail"] . '</td>
     <td>' . $access . '</td>
     <td><button type="button" id="' . $row["login"] . '" class="btnSelect btn btn-danger btn-xs">Select</button></td>
