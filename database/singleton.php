@@ -1,15 +1,14 @@
 <?php
-$dsn = "mysql:host=localhost;dbname=document_viewer;charset=utf8";
-$options = [
-  PDO::ATTR_EMULATE_PREPARES   => false, // turn off emulation mode for "real" prepared statements
-  PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, //turn on errors in the form of exceptions
-  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, //make the default fetch be an associative array
-];
-try {
-    $pdo = new PDO($dsn, "root", "", $options);
-    print_r($pdo);
-} catch (Exception $e) {
-    error_log($e->getMessage());
-    exit('Something weird happened'); //something a user can understand
-}
+  $host_name = 'db5006054899.hosting-data.io';
+  $database = 'dbs5070577';
+  $user_name = 'dbu1571230';
+  $password = 'EXTELPASS00!';
+  $dbh = 'document_viewer';
+
+  try {
+    $dbh = new PDO("mysql:host=$host_name; dbname=$database;", $user_name, $password);
+  } catch (PDOException $e) {
+    echo "Erreur!: " . $e->getMessage() . "<br/>";
+    die();
+  }
 ?>
