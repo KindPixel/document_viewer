@@ -11,7 +11,7 @@ $(document).ready(function () {
 
         const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
         const regexEmail = /\S+@\S+\.\S+/;
-        const regexLogin = /^[A-Za-z]+$/;
+        const regexLogin = /^[a-zA-Z0-9_.-]*$/;
 
 
         if (login != "" && namecomp != "" && email != "" && password != "" && password_conf != "" && access != "" && allName != "") {

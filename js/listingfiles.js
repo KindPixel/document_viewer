@@ -4,10 +4,9 @@ $(document).ready(function () {
         type: "GET",
         url: "php/listingusersfiles.php",
         success: function (response) {
-            response = response.substring(32);
+            response = response.substring(17);
             response = response.slice(0, -3);
             response = response.replaceAll(/\\/g, '');
-            console.log(response);
 
             if (response != "") {
                 response = JSON.parse(response);
@@ -22,8 +21,8 @@ $(document).ready(function () {
                             tableBody = $("#myTable");
                             tableBody.append(markup);
                         }
-                    });
-                });
+                    })
+                })
             } else {
                 markup = "<tr style='cursor: pointer;'><td>" + "Vous n'avez aucun document alouer à votre espace" + "</td></tr>";
                 tableBody = $("#myTable");

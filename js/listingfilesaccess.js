@@ -5,13 +5,11 @@ $(document).ready(function () {
         type: "GET",
         cache: false,
         success: function (dataResult) {
-            console.log(dataResult);
             dataResult = JSON.parse(dataResult);
             dataResult = Object.values(dataResult);
 
             var urlObj = new URL(window.location.href);
             var login = urlObj.searchParams.get("login");
-
 
             $.ajax({
                 type: "POST",
@@ -20,34 +18,43 @@ $(document).ready(function () {
                 success: function (data) {
                     response = data;
 
-                    response = response.substring(32);
+                    response = response.substring(17);
                     response = response.slice(0, -3);
                     response = response.replaceAll(/\\/g, '');
-                    
+
+
                     if (response == "" || response == "null") {
                         $.each(dataResult, function (indexInArray, valueOfElement) {
-                            markup = '<div class="form-group form-check"><label class="form-check-label"><input id="' + valueOfElement + '" class="form-check-input checkAccess" type="checkbox" name="remember"> ' + valueOfElement + '</label></div>';
-                            tableBody = $("#acessdoc");
-                            tableBody.append(markup);
+                            $.ajax({
+                                url: "pages/" + valueOfElement,
+                                success: function (data) {
+                                    var title = data.split("<title>")[1].split("</title>")[0];
+                                    markup = '<div class="form-group form-check"><label class="form-check-label"><input id="' + valueOfElement + '" class="form-check-input checkAccess" type="checkbox" name="remember"> ' + title + '</label></div>';
+                                    tableBody = $("#acessdoc");
+                                    tableBody.append(markup);
+                                }
+                            })
                         });
-                    }
-                    else {
-                        console.log(response);
+
+                    } else {
                         response = JSON.parse(response);
                         $.each(dataResult, function (indexInArray, valueOfElement) {
-
-                            if (response.includes(valueOfElement)) {
-                                markup = '<div class="form-group form-check"><label class="form-check-label"><input id="' + valueOfElement + '" class="form-check-input checkAccess" type="checkbox" name="remember" checked> ' + valueOfElement + '</label></div>';
-                            }
-                            else {
-                                markup = '<div class="form-group form-check"><label class="form-check-label"><input id="' + valueOfElement + '" class="form-check-input checkAccess" type="checkbox" name="remember"> ' + valueOfElement + '</label></div>';
-                            }
-
-                            tableBody = $("#acessdoc");
-                            tableBody.append(markup);
+                            $.ajax({
+                                url: "pages/" + valueOfElement,
+                                success: function (data) {
+                                    var title = data.split("<title>")[1].split("</title>")[0];
+                                    if (response.includes(valueOfElement)) {
+                                        markup = '<div class="form-group form-check"><label class="form-check-label"><input id="' + valueOfElement + '" class="form-check-input checkAccess" type="checkbox" name="remember" checked> ' + title + '</label></div>';
+                                    }
+                                    else {
+                                        markup = '<div class="form-group form-check"><label class="form-check-label"><input id="' + valueOfElement + '" class="form-check-input checkAccess" type="checkbox" name="remember"> ' + title + '</label></div>';
+                                    }
+                                    tableBody = $("#acessdoc");
+                                    tableBody.append(markup);
+                                }
+                            })
                         });
                     }
-
                 }
             });
 
@@ -58,7 +65,6 @@ $(document).ready(function () {
                 $('#acessdoc input:checked').each(function () {
                     pagesArray.push($(this).attr("id"));
                 });
-                console.log(pagesArray);
                 $.ajax({
                     type: "POST",
                     url: "php/updateUserAccess.php",
@@ -69,20 +75,14 @@ $(document).ready(function () {
                     success: function (response) {
                         statusCode = response.substr(response.length - 3);
                         if (statusCode == 200) {
+                            $("#error").hide();
                             $("#success").show();
                             $('#success').html('Changement validé!');
-                            setTimeout(fade_out, 3000);
-                            function fade_out() {
-                                $("#success").hide().empty();
-                            }
                         }
                         else if (statusCode == 201) {
+                            $("#success").hide();
                             $("#error").show();
                             $('#error').html('Quelque chose s\'est mal passé');
-                            setTimeout(fade_out, 5000);
-                            function fade_out() {
-                                $("#error").hide().empty();
-                            }
                         }
                         else {
                             console.log("error");

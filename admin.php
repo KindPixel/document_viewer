@@ -1,31 +1,33 @@
 <?php
-include("lib.php");
+session_start();
 
-if ($_SESSION["access"] == "") {
-    header("Location: login.php");
-}
-else if ($_SESSION["access"] != "999") {
-    header("Location: home.php");
+if ($_SESSION["access"] == "NULL" || $_SESSION["access"] == "" || !isset($_SESSION)) {
+    echo '<meta http-equiv="refresh" content="0;url=login.php">';
     die();
 }
-?>
 
-<?php include("navbar.php")?>
+if ($_SESSION["access"] != "999") {
+    echo '<meta http-equiv="refresh" content="0;url=home.php">';
+    die();
+}
+
+include("lib.php");
+include("navbar.php");
+?>
 
 <script type="text/javascript" src="js/listingusers.js"></script>
 
-<div class="maxwidth">
+<table class="table table-striped table-hover" id="tableUser">
+    <thead>
+        <tr>
+            <th>Nom société</th>
+            <th>Nom utilisateur</th>
+            <th>Email</th>
+            <th>Statut</th>
+            <th colspan="3">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
 
-<h5>Liste des utilisateurs</h5>
-
-<table border='1' id="tableUsers">
-    <tr>
-        <th>Nom société</th>
-        <th>Nom utilisateur</th>
-        <th>Email</th>
-        <th>Statut</th>
-        <th>Actions</th>
-    </tr>
+    </tbody>
 </table>
-
-</div>

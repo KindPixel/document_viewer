@@ -7,7 +7,6 @@ $pdo = null;
 
 try {
   $pdo = new PDO("mysql:host=$host_name; dbname=$database;", $user_name, $password);
-  print_r($pdo);
 } catch (PDOException $e) {
   echo "Erreur!: " . $e->getMessage() . "<br/>";
   die();

@@ -8,7 +8,7 @@
 
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $request = $pdo->prepare("select * from users where login=:login");
+    $request = $pdo->prepare("select * from users where login=:login OR mail=:login");
     $request->bindParam(":login", $login, PDO::PARAM_STR, 64);
     $request->execute();
     $users = $request->fetch(PDO::FETCH_ASSOC);

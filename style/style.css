@@ -12,13 +12,16 @@ body {
   box-shadow: none;
   border-radius: 3px;
 }
+
 .loginbox input:hover {
   border: 1px solid cornflowerblue;
 }
+
 .loginbox input:focus {
   border: 1px solid cornflowerblue;
   box-shadow: none;
 }
+
 .loginbox input:active {
   border: 1px solid cornflowerblue;
   box-shadow: none;
@@ -30,25 +33,27 @@ body {
   box-shadow: none;
   border-radius: 3px;
 }
+
 #register_form input:hover {
   border: 1px solid #fa7418;
 }
+
 #register_form input:focus {
   border: 1px solid #fa7418;
   box-shadow: none;
 }
+
 #register_form input:active {
   border: 1px solid #fa7418;
   box-shadow: none;
-}
-
-#register_form select {
 }
 
 #register_form label {
   display: block;
 }
 
+#butUpdmDP,
+#butUpd,
 #butlogin,
 #butsave {
   width: 100%;
@@ -86,6 +91,8 @@ a {
 #myTable td {
   padding: 3px 0px;
 }
+
+.btn-submit,
 .btnSelect {
   background-color: #fa7418;
   border: 0px;
@@ -94,8 +101,11 @@ a {
   font-size: 13px;
   padding: 3px 5px;
 }
+
+.btn-submit:hover,
 .btnSelect:hover {
   border: 0px;
+  background-color: #693609;
 }
 
 .btnDel {
@@ -107,19 +117,36 @@ a {
   padding: 3px 5px;
   width: 100%;
 }
+
 .btnDel:hover {
   border: 0px;
+}
+
+.btnUpd:hover {
+  background-color: rgb(223, 165, 5);
+}
+
+.btnUpd {
+  background-color: rgb(223, 201, 5);
+  border: 0px;
+  border-radius: 3px;
+  color: white;
+  font-size: 13px;
+  padding: 3px 5px;
+  width: 100%;
 }
 
 .navbar .container-fluid > .navbar-header {
   float: left;
   margin-right: 10px;
 }
+
 .navbar .navbar-nav {
   width: 100%;
   margin: 5px;
   font-size: 14px;
 }
+
 .nav > li {
   float: left;
 }
@@ -201,7 +228,7 @@ a {
 }
 
 #myTable,
-#tableUsers {
+#tableUser {
   margin: 0 auto;
   width: 100%;
   background: #fff;
@@ -213,8 +240,9 @@ a {
   padding: 20px;
   font-size: 13px;
 }
+
 #myTable tbody,
-#tableUsers tbody {
+#tableUser {
   width: 100%;
   display: table;
 }
@@ -258,4 +286,9 @@ div {
   padding: 10px;
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-left: 25%;
+}
+
+.singleuser {
+  margin-left: 50%;
 }
