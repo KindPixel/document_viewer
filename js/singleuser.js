@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     var urlObj = new URL(window.location.href);
     var username = urlObj.searchParams.get("login");
-    console.log(username);
 
     $.ajax({
         type: "POST",

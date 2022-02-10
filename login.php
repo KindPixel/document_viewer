@@ -1,7 +1,9 @@
-<?php include("lib.php");
-if ($_SESSION['access'] != "") {
+<?php
+session_start();
+if (isset($_SESSION['access'])) {
 	header("Location: home.php");
 }
+include("lib.php");
 ?>
 
 <script type="text/javascript" src="js/loginscript.js"></script>
@@ -21,7 +23,7 @@ if ($_SESSION['access'] != "") {
 			<div class="input-group">
 				<input type="password" class="form-control" name="password" autocomplete="new-password" id="password">
 				<div class="input-group-append toggle-password">
-					<span class="input-group-text mdi mdi-eye-outline"></span>
+					<span class="input-group-text mdi mdi-eye-off-outline"></span>
 				</div>
 			</div>
 		</div>
